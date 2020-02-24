@@ -1,0 +1,25 @@
+@use "../settings/variables" as _variables;
+
+// List...............Blog post list styles.
+
+.list {
+  margin-bottom: (_variables.$core-grid * 2.5);
+  margin-left: _variables.$core-grid;
+  padding-left: (_variables.$core-grid * 1.5);
+}
+
+.list--ordered {
+  list-style-type: decimal;
+}
+
+.list--unordered {
+  list-style-type: disc;
+}
+
+.list__item {
+  margin-bottom: _variables.$core-grid;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

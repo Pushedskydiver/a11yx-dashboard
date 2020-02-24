@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-GB">
+    <head>
+        <!-- META TAGS  -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, minimum-scale=1, user-scalable=yes, initial-scale=1, viewport-fit=cover">
+        <meta name="description" content="{{#if description}}{{{description}}}{{else}}{{#if title}}{{{title}}}{{/if}}{{#unless home}} &mdash; Alex Clapperton{{/unless}} &mdash; Front-End Web Developer{{/if}}">
+        {{#if nofollow}}
+        <meta name="robots" content="noindex, nofollow">
+        {{/if}}
+
+        <!-- PAGE TITLE -->
+        <title>
+        {{#if title}}{{{title}}}{{/if}}{{#unless home}} &mdash; Alex Clapperton{{/unless}} &mdash; Professional Front-End Web Developer
+        </title>
+
+        <!-- RESOURCE HINTS -->
+        <link rel="preconnect" href="https://images.ctfassets.net/">
+
+        <!-- PRELOAD FILES -->
+         {{> _partials/preload-styles }}
+        <link rel="preload" href="/fonts/avenir-next-variable.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="/fonts/selawik-variable.woff2" as="font" type="font/woff2" media="(min-width: 62em)" crossorigin>
+
+        <!-- STYLESHEET -->
+        {{> _partials/styles }}
+
+        <!-- SITEMAP -->
+        <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+
+        <!-- MANIFEST -->
+        <link rel="manifest" href="/site.webmanifest">
+
+        <link rel="alternate" href="{{{settings.url}}}" hreflang="en-gb">
+        <link rel="canonical" href="{{{settings.url}}}{{#if article.date}}/articles{{/if}}{{#if article.slug}}/{{{article.slug}}}{{/if}}">
+
+        <script type="application/ld+json">{
+            "@context": "http://schema.org",
+        {{#if post}}
+            "@type": "BlogPosting",
+             "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": "{{settings.url}}/articles/{{this.slug}}/"
+            },
+            "headline": "{{this.title}}",
+            "description": "{{this.description}}",
+            "image": "{{settings.url}}/images/profile/alex-clapperton.jpg",
+            "author": {
+                "@type": "Person",
+                "name": "{{settings.name}}"
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": "{{settings.name}}",
+                "logo": {
+                "@type": "ImageObject",
+                "url": "{{settings.url}}/favicons/favicon-256x256.png",
+                "width": 256,
+                "height": 256
+                }
+            },
+            "datePublished": "{{this.datePublished}}",
+            "dateModified": "{{this.dateModified}}"
+        {{else}}
+            "@type": "Person",
+            "name": "{{settings.name}}",
+            "url": "{{settings.url}}",
+            "image": "{{settings.url}}images/profile/alex-clapperton.jpg",
+            "sameAs": [
+                "{{settings.url}}",
+            {{#each settings.social}}
+                {{#unless @last}}"{{this.url}}",{{/unless}}
+                {{#if @last}}"{{this.url}}"{{/if}}
+            {{/each}}
+            ],
+            "jobTitle": "{{settings.jobTitle}}",
+            "worksFor": {
+                "@type": "Organization",
+                "name": "{{settings.employer}}"
+            }
+        {{/if}}
+        }</script>
+
+        <!-- FACEBOOK -->
+        <meta property="og:title" content="{{#if title}}{{title}}{{/if}}{{#unless home}} &mdash; {{settings.name}}{{/unless}}{{#if settings.jobTitle}} &mdash; {{settings.jobTitle}}{{/if}}" />
+        <meta property="og:type" content="{{#if article.date}}article{{else}}website{{/if}}" />
+        <meta property="og:url" content="{{{settings.url}}}{{#if article.date}}/articles{{/if}}{{#if article.slug}}/{{{article.slug}}}{{/if}}" />
+        <meta property="og:image" content="{{{settings.url}}}{{#if ogImage}}{{{ogImage}}}{{else}}/images/profile/alex-clapperton.jpg{{/if}}" />
+        <meta property="og:description" content="{{#if summary}}{{{summary}}}{{else}}{{{settings.name}}}{{/if}}">
+        <meta property="og:locale" content="en_GB">
+        <meta property="article:author" content="{{{settings.name}}}">
+        <meta property="og:site_name" content="{{{settings.name}}}">
+
+        <!-- TWITTER -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="{{{settings.twitterHandle}}}">
+        <meta name="twitter:creator" content="{{{settings.twitterHandle}}}">
+        <meta name="twitter:url" content="{{{settings.url}}}{{#if article.date}}/articles{{/if}}{{#if article.slug}}/{{{article.slug}}}{{/if}}">
+        <meta name="twitter:title" content="{{#if title}}{{title}}{{/if}}{{#unless home}} &mdash; {{settings.name}}{{/unless}}{{#if settings.jobTitle}} &mdash; {{settings.jobTitle}}{{/if}}">
+        <meta name="twitter:description" content="{{#if summary}}{{{summary}}}{{else}}{{{settings.name}}} &mdash; Articles{{/if}}">
+        <meta name="twitter:image" content="{{{settings.url}}}{{#if ogImage}}{{{ogImage}}}{{else}}/images/profile/alex-clapperton.jpg{{/if}}">
+
+        <!-- FAVICONS -->
+        <link rel="icon" type="image/png" href="/favicons/favicon-48x48.png" sizes="16x16">
+        <link rel="icon" type="image/png" href="/favicons/favicon-72x72.png" sizes="32x32">
+        <link rel="icon" type="image/png" sizes="96x96" href="/favicons/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="144x144" href="/favicons/favicon-144x144.png">
+        <link rel="icon" type="image/png" sizes="256x256" href="/favicons/favicon-256x256.png">
+
+        <!-- APPLE ICONS -->
+        <meta name="apple-mobile-web-app-title" content="Alex">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="default">
+        <link rel="apple-touch-icon" href="/favicons/apple-touch-icon.png">
+        <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#0e0d0d">
+
+        <!-- APPLE SPLASH SCREENS -->
+        <!-- iPhone X (1125px x 2436px) -->
+        <link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)" href="/images/splash/splash-1125x2436.jpg">
+        <!-- iPhone 8, 7, 6s, 6 (750px x 1334px) -->
+        <link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)" href="/images/splash/splash-750x1334.jpg">
+        <!-- iPhone 8 Plus, 7 Plus, 6s Plus, 6 Plus (1242px x 2208px) -->
+        <link rrel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3)" href="/images/splash/splash-1242x2208.jpg">
+        <!-- iPhone 5 (640px x 1136px) -->
+        <link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" href="/images/splash/splash-640x1136.jpg">
+        <!-- iPad Mini, Air (1536px x 2048px) -->
+        <link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2)" href="/images/splash/splash-1536x2048.jpg">
+        <!-- iPad Pro 10.5" (1668px x 2224px) -->
+        <link rel="apple-touch-startup-image" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2)" href="/images/splash/splash-1668x2224.jpg">
+        <!-- iPad Pro 12.9" (2048px x 2732px) -->
+        <link rel="apple-touch-startup-image" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2)" href="/images/splash/splash-2048x2732.jpg">
+
+        <!-- MS TILE ICONS -->
+        <meta name="application-name" content="Alex">
+        <meta name="msapplication-TileColor" content="#fff">
+        <meta name="msapplication-square70x70logo" content="/favicons/favicon-70x70.png">
+        <meta name="msapplication-TileImage" content="/favicons/favicon-144x144.png">
+        <meta name="msapplication-square150x150logo" content="/favicons/favicon-150x150.png">
+        <meta name="msapplication-wide310x150logo" content="/favicons/favicon-310x150.png">
+        <meta name="msapplication-square310x310logo" content="/favicons/favicon-310x310.png">
+        <meta name="msapplication-tooltip" content="Alex">
+        <meta name="msapplication-config" content="/browserconfig.xml">
+        <meta name="theme-color" content="#0e0d0d">
+
+        <!-- JAVASCRIPT -->
+        {{> _partials/scripts }}
+    </head>
+
+    <body id="top">
+
+        <!-- JAVASCRIPT ALERT -->
+        <noscript>
+            <div class="support-notice support-notice--javascript">
+              <p>You currently have JavaScript in your browser turned off, so some features of this site may not work fully.</p>
+              <p>Find out <a href="http://enable-javascript.com" rel="external" target="_blank">how to turn JavaScript on</a>.</p>
+            </div>
+        </noscript>
