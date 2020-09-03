@@ -38,3 +38,5 @@ function observe(callback: Function, elements: NodeList) {
  * ******* */
 
 import(/* webpackChunkName: "swRegister" */ 'Src/swRegister').then(initModule).catch(err => console.error(`Error in: swRegister - ${err}`));
+
+import(/* webpackChunkName: "a11y" */ 'Src/a11y').then(initModule).catch(err => console.error(`Error in: a11y - ${err}`));

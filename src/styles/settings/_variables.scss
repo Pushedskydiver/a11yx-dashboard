@@ -3,13 +3,13 @@
 $core-grid-width: 1170px;
 $core-grid: 12px;
 
-$core-color-brand: #0e0d0d;
-$core-color-background: #ffffff;
-$core-color-foreground: #040f0f;
+$core-color-brand: #e888da;
+$core-color-background: #1b1a26;
+$core-color-foreground: #ffffff;
 $core-color-neutral: #b6bcce;
-$core-color-fade: #fcfcfc;
-$core-color-link: #fbd664;
-$core-color-body: rgba($core-color-brand, 0.7);
+$core-color-fade: #26283d;
+$core-color-link: $core-color-brand;
+$core-color-body: $core-color-fade;
 
 $core-border-width: 0.2em;
 $core-border-style: solid;

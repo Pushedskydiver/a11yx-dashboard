@@ -13,12 +13,12 @@ module.exports = config => {
   config.addFilter('formatDate', formatDate);
   config.addFilter('swStyles', swStyles);
 
-  // config.addPassthroughCopy({ 'src/favicons': 'favicons' });
-  // config.addPassthroughCopy({ 'src/fonts': 'fonts' });
-  // config.addPassthroughCopy({ 'src/icons': 'icons' });
+  config.addPassthroughCopy({ 'src/favicons': 'favicons' });
+  config.addPassthroughCopy({ 'src/fonts': 'fonts' });
+  config.addPassthroughCopy({ 'src/icons': 'icons' });
   // config.addPassthroughCopy({ 'src/images': 'images' });
-  // config.addPassthroughCopy({ 'src/site.webmanifest': 'site.webmanifest' });
-  // config.addPassthroughCopy({ 'src/browserconfig.xml': 'browserconfig.xml' });
+  config.addPassthroughCopy({ 'src/site.webmanifest': 'site.webmanifest' });
+  config.addPassthroughCopy({ 'src/browserconfig.xml': 'browserconfig.xml' });
 
   if (prod) {
     config.addTransform('htmlmin', htmlMin);

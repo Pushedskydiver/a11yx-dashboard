@@ -27,6 +27,7 @@ html {
 }
 
 body {
+  @include _typography.text(bodyCopy);
   color: var(--color-body);
   background-color: var(--color-background);
   margin: 0;
@@ -45,13 +46,7 @@ body ::selection {
 }
 
 h1 {
-  @include _responsive.min(l) {
-    font-size: calc(2.5em + 0.5vw);
-  }
-}
-
-p {
-  @include _typography.text(bodyCopy);
+  @include _typography.text(uranus);
 }
 
 a {
